@@ -28,9 +28,7 @@ class Cell extends Model {
 
     public function getSymbol() {
         return $this->symbol;
-    }
-
- 
+    } 
     
 
 }
