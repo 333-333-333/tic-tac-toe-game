@@ -17,7 +17,7 @@ services:
         - gato
   db:
     image: mysql:8.0
-    container_name: gato-db
+    container_name: tic-tac-toe-db
     restart: unless-stopped
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}

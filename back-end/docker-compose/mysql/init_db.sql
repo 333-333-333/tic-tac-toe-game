@@ -1,10 +1,6 @@
-DROP TABLE IF EXISTS `places`;
+DROP TABLE IF EXISTS `matches`;
 
-CREATE TABLE `places` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `visited` tinyint(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
+CREATE TABLE matches (
+  winner VARCHAR(60) NOT NULL,
+  date DATETIME NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
-INSERT INTO `places` (name, visited) VALUES ('Berlin',0),('Budapest',0),('Cincinnati',1),('Denver',0),('Helsinki',0),('Lisbon',0),('Moscow',1),('Nairobi',0),('Oslo',1),('Rio',0),('Tokyo',0);
