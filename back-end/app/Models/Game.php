@@ -54,6 +54,11 @@ class Game extends Model {
 
         if ($this->checkWinner($board, $symbol)) {
             $this->winner = $symbol;
+
+            if ($this->status != 'won') {
+                $this->saveIntoDatabase();
+            }
+            
             $this->status = 'won';
         }
     }
@@ -151,6 +156,16 @@ class Game extends Model {
 
     public function setCurrentPlayer($currentPlayer) {
         $this->currentPlayer = $currentPlayer;
+    }
+
+
+    // Save into database
+
+    public function saveIntoDatabase() {
+        $Database = new Database();
+        $Database->winner = $this->winner;
+        $Database->date = date("Y-m-d H:i:s");
+        $Database->save();
     }
 
 }

@@ -45,7 +45,6 @@ class GameController extends Controller {
     private function createBoardFromArray($boardArray) {
         $board = new Board();
 
-        // Creates cell grid
         $grid = [];
         foreach ($boardArray as $symbol) {
             $cell = new Cell();

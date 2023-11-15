@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Database extends Model
 {
     use HasFactory;
+
+    protected $table = "matches";
+
+    protected $fillable = ["winner", "date"];
+
+
 }
