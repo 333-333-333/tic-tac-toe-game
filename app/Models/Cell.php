@@ -18,8 +18,8 @@ class Cell extends Model {
 
     private $symbol;
 
-    public function __construct($symbol = ' ') {
-        $this->symbol = $symbol;
+    public function __construct() {
+        $this->symbol = null;
     }
 
     public function setSymbol($symbol) {
@@ -28,7 +28,11 @@ class Cell extends Model {
 
     public function getSymbol() {
         return $this->symbol;
-    } 
+    }
+
+    public function isEmpty() {
+        return $this->symbol == null;
+    }
     
 
 }
